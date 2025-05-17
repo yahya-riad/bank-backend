@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+
+    <changeSet id="3" author="yriad">
+        <insert tableName="reference_event">
+            <column name="event_type" value="Reception"/>
+            <column name="step_code" value="Acquisition"/>
+            <column name="step_rank" valueNumeric="2"/>
+            <column name="event_rank" valueNumeric="1"/>
+        </insert>
+        <insert tableName="reference_event">
+            <column name="event_type" value="Duplicate"/>
+            <column name="step_code" value="Acquisition"/>
+            <column name="step_rank" valueNumeric="2"/>
+            <column name="event_rank" valueNumeric="2"/>
+        </insert>
+        <insert tableName="reference_event">
+            <column name="event_type" value="DuplicateVerification"/>
+            <column name="step_code" value="Acquisition"/>
+            <column name="step_rank" valueNumeric="2"/>
+            <column name="event_rank" valueNumeric="3"/>
+        </insert>
+        <insert tableName="reference_event">
+            <column name="event_type" value="Duplicate4EyesVerification"/>
+            <column name="step_code" value="Acquisition"/>
+            <column name="step_rank" valueNumeric="2"/>
+            <column name="event_rank" valueNumeric="4"/>
+        </insert>
+        <insert tableName="reference_event">
+            <column name="event_type" value="100%VirementHold"/>
+            <column name="step_code" value="Acquisition"/>
+            <column name="step_rank" valueNumeric="2"/>
+            <column name="event_rank" valueNumeric="5"/>
+        </insert>
+        <insert tableName="reference_event">
+            <column name="event_type" value="100%VirementVerify"/>
+            <column name="step_code" value="Acquisition"/>
+            <column name="step_rank" valueNumeric="2"/>
+            <column name="event_rank" valueNumeric="6"/>
+        </insert>
+        <insert tableName="reference_event">
+            <column name="event_type" value="OnHold"/>
+            <column name="step_code" value="Acquisition"/>
+            <column name="step_rank" valueNumeric="2"/>
+            <column name="event_rank" valueNumeric="7"/>
+        </insert>
+        <insert tableName="reference_event">
+            <column name="event_type" value="Repair"/>
+            <column name="step_code" value="Acquisition"/>
+            <column name="step_rank" valueNumeric="2"/>
+            <column name="event_rank" valueNumeric="8"/>
+        </insert>
+        <insert tableName="reference_event">
+            <column name="event_type" value="Reception"/>
+            <column name="step_code" value="Acquisition"/>
+            <column name="step_rank" valueNumeric="2"/>
+            <column name="event_rank" valueNumeric="9"/>
+        </insert>
+        <insert tableName="reference_event">
+            <column name="event_type" value="Duplicate"/>
+            <column name="step_code" value="Acquisition"/>
+            <column name="step_rank" valueNumeric="2"/>
+            <column name="event_rank" valueNumeric="10"/>
+        </insert>
+        <insert tableName="reference_event">
+            <column name="event_type" value="DuplicateVerification"/>
+            <column name="step_code" value="Acquisition"/>
+            <column name="step_rank" valueNumeric="2"/>
+            <column name="event_rank" valueNumeric="11"/>
+        </insert>
+        <insert tableName="reference_event">
+            <column name="event_type" value="Duplicate4EyesVerification"/>
+            <column name="step_code" value="Acquisition"/>
+            <column name="step_rank" valueNumeric="2"/>
+            <column name="event_rank" valueNumeric="12"/>
+        </insert>
+        <insert tableName="reference_event">
+            <column name="event_type" value="100%VirementHold"/>
+            <column name="step_code" value="Acquisition"/>
+            <column name="step_rank" valueNumeric="2"/>
+            <column name="event_rank" valueNumeric="13"/>
+        </insert>
+        <insert tableName="reference_event">
+            <column name="event_type" value="100%VirementVerify"/>
+            <column name="step_code" value="Acquisition"/>
+            <column name="step_rank" valueNumeric="2"/>
+            <column name="event_rank" valueNumeric="14"/>
+        </insert>
+        <insert tableName="reference_event">
+            <column name="event_type" value="OnHold"/>
+            <column name="step_code" value="Acquisition"/>
+            <column name="step_rank" valueNumeric="2"/>
+            <column name="event_rank" valueNumeric="15"/>
+        </insert>
+        <insert tableName="reference_event">
+            <column name="event_type" value="Repair"/>
+            <column name="step_code" value="Acquisition"/>
+            <column name="step_rank" valueNumeric="2"/>
+            <column name="event_rank" valueNumeric="16"/>
+        </insert>
+        <insert tableName="reference_event">
+            <column name="event_type" value="CBAcquired"/>
+            <column name="step_code" value="AcquisitionCB"/>
+            <column name="step_rank" valueNumeric="1"/>
+            <column name="event_rank" valueNumeric="1"/>
+        </insert>
+        <insert tableName="reference_event">
+            <column name="event_type" value="CBGPAcquired"/>
+            <column name="step_code" value="AcquisitionCB"/>
+            <column name="step_rank" valueNumeric="1"/>
+            <column name="event_rank" valueNumeric="2"/>
+        </insert>
+        <insert tableName="reference_event">
+            <column name="event_type" value="CBAcquiredForBatch"/>
+            <column name="step_code" value="AcquisitionCB"/>
+            <column name="step_rank" valueNumeric="1"/>
+            <column name="event_rank" valueNumeric="3"/>
+        </insert>
+        <insert tableName="reference_event">
+            <column name="event_type" value="CBAcquiredToPfmt101"/>
+            <column name="step_code" value="AcquisitionCB"/>
+            <column name="step_rank" valueNumeric="1"/>
+            <column name="event_rank" valueNumeric="4"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                                       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.8.xsd">
+
+    <changeSet id="2" author="yriad">
+        <createTable tableName="transaction_event">
+            <column name="primary_id" type="varchar(50)">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="secondary_id" type="varchar(50)"/>
+            <column name="event_type" type="varchar(50)"/>
+            <column name="date" type="varchar(100)"/>
+            <column name="valid" type="boolean"/>
+        </createTable>
+    </changeSet>
+
+
+</databaseChangeLog>

@@ -1,0 +1,59 @@
+{
+	"info": {
+		"_postman_id": "cd360bbd-02d4-43ea-899a-12ee20cc4964",
+		"name": "Transaction Reconciliation API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28652799"
+	},
+	"item": [
+		{
+			"name": "Reconcile by Primary ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Réponse contient les champs attendus\", function () {",
+							"    const jsonData = pm.response.json();",
+							"    pm.expect(jsonData.length).to.be.above(0);",
+							"    pm.expect(jsonData[0]).to.have.property(\"primaryId\");",
+							"    pm.expect(jsonData[0]).to.have.property(\"secondaryId\");",
+							"    pm.expect(jsonData[0]).to.have.property(\"eventType\");",
+							"    pm.expect(jsonData[0]).to.have.property(\"date\");",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/transaction/{{primaryId}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"transaction",
+						"{{primaryId}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "primaryId",
+			"value": "UUuLEemSQk"
+		}
+	]
+}
