@@ -26,8 +26,10 @@ public class TransactionServiceImpl implements TransactionService {
         List<TransactionEvent> transactionEvents = new ArrayList<>();
         var referenceEvents = referenceEventRepository.findAllByOrderByEventRankAsc();
 
+        int result = 0;
+        int maxResults = referenceEvents.size() - 1;
         var currentId = startingPrimaryId;
-        while (currentId != null && ids.add(currentId)) {
+        while (currentId != null && ids.add(currentId) && result++ < maxResults) {
             var transactionEvent = transactionRepository.findByPrimaryId(currentId);
             if (transactionEvent.isPresent()) {
                 transactionEvents.add(transactionEvent.get());
@@ -60,7 +62,10 @@ public class TransactionServiceImpl implements TransactionService {
 
                     return reconciledMapper.toDto(transaction, referenceEvent);
                 })
-                .sorted(Comparator.comparing(ReconciledTransactionDto::getEventRank, Comparator.nullsLast(Integer::compareTo)))
+                .sorted(
+                        Comparator.comparing(ReconciledTransactionDto::getStepCode, Comparator.nullsLast(String::compareTo))
+                                .thenComparing(ReconciledTransactionDto::getEventRank, Comparator.nullsLast(Integer::compareTo))
+                )
                 .toList();
     }
 
