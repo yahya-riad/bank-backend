@@ -60,6 +60,7 @@ public class TransactionServiceImpl implements TransactionService {
 
                     return reconciledMapper.toDto(transaction, referenceEvent);
                 })
+                .sorted(Comparator.comparing(ReconciledTransactionDto::getEventRank, Comparator.nullsLast(Integer::compareTo)))
                 .toList();
     }
 
